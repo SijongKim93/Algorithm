@@ -147,3 +147,76 @@ Bool - false
 !a -> ! 는 Bool 값을 반대로 표현한다
 a && b -> and 연산자로 a b 모두 참일때 true
 a || b -> Or 연산자로 a b 중 하나만 참일때 true
+
+
+비교연산자
+비교연산자는 Bool 값으로 값이 정해진다.
+
+ex) 
+var a = 15
+var b = 17
+
+a == b  false
+a와 b는 같은가? true / fales
+
+a != b true
+!는 원래 나오는 Bool 값의 반대로 값을 정한다
+
+a >= b false
+
+a <= b true
+
+a && b -> and 연산자로써 a, b 모두 적용되는 값을 true
+
+a || b -> or 연산자로써 a, b 중 하나만 적용되어도 true
+조건연산자
+대표적으로 if문과 같이 어떠한 조건을 만족하면 Bool값을 정한다
+
+ex) 
+let hour = 12
+if hour < 12 {
+	"오전"
+ } else {
+ 	"오후"
+ }
+ 
+ if문을 한문장으로 깔끔하게 표현하려면 다음과 같은 연산자를 사용하면 된다.
+ 
+ hour < 12 ? "오전" : "오후"
+ㄴ hour 조건이 12보다 낮다면 오전 , 아니면 오후
+복합 할당 연산자
+var a = 0
+a = a + 1  ,  a += 1  둘은 같은 식이다.
+알고리즘 풀이
+문제 설명
+정수 n이 주어질 때, n이하의 짝수를 모두 더한 값을 return 하도록 solution 함수를 작성해주세요.
+
+제한사항
+0 < n ≤ 1000
+
+import Foundation
+
+func solution(_ n:Int) -> Int {
+    var sum = 0
+    
+    for i in stride(from: 2, through: n, by: 2) {
+        sum += i
+    }
+    return sum
+}
+이번 알고리즘 풀이에서는 처음 접해보는 함수와 문이 많았다.
+먼저 stride 함수는 일정한 간격으로 숫자를 생성하며, 주로 반복문에서 많이 사용하는 함수이다.
+
+stride 함수 : stride(from: 시작점, through: 끝점, by: 간격)
+
+알고리즘 내 n 이하의 짝수를 모두 더한 값이 리턴되도록 요구하였기 때문에
+
+stride(from: 2, through: n, by: 2)
+
+짝수로 시작하여야 하니 from에는 2 간격을 2로 설정할 경우 짝수만 출력되게 된다.
+그리고 끝점을 n 으로 설정하면 n에 입력되는 값 이하의 짝수가 출력되는 식이 완성된다.
+
+for 문의 경우 범위 내 모든 값을 출력하는 반복문으로 사용 되는 문이다.
+위에 있는 stride 함수를 for 문에 넣고 i 에 stride 값을 담는다.
+
+그리고 모든 값을 더할 수 있도록 sum += i를 설정해주면 해결

@@ -220,3 +220,79 @@ for 문의 경우 범위 내 모든 값을 출력하는 반복문으로 사용 �
 위에 있는 stride 함수를 for 문에 넣고 i 에 stride 값을 담는다.
 
 그리고 모든 값을 더할 수 있도록 sum += i를 설정해주면 해결
+
+
+알고리즘 풀이
+문제 설명
+정수 배열 numbers가 매개변수로 주어집니다. numbers의 원소의 평균값을 return하도록 solution 함수를 완성해주세요.
+
+제한사항
+0 ≤ numbers의 원소 ≤ 1,000
+1 ≤ numbers의 길이 ≤ 100
+정답의 소수 부분이 .0 또는 .5인 경우만 입력으로 주어집니다.
+
+오늘은 풀이를 보지 않고 많이 고민하며 문제를 풀어봤으나 몇가지 생각나지 않는 부분이 있었다.
+먼저 for 문을 사용하여 구해보려고 했다.
+
+내가 쓴 답
+
+import Foundation
+
+func solution(_ numbers:[Int]) -> Double {
+    let sum = 0
+    for 0 ... numbers in {
+        (sum += numbers) / numbers
+    } 
+    return sum
+}
+for 문 공식부터 틀린 것 같다. 나는 0부터 numbers 의 값을 합치고 numbers로 나누자는 방향이었으나, 이것은 잘못된 형식이었다.
+
+답
+import Foundation
+
+func solution(_ numbers:[Int]) -> Double {
+    let sum = 0
+    
+    for number in numbers {
+    sum += number
+    }
+    
+    let average = Double(sum) / Double(numbers.count)
+    return average
+}
+for문 내 number 라는 새로운 저장공간에 numbers 값을 넣어두고
+sum = sum + number , 즉 sum += number 를 통해 numbers의 총합을 저장한다.
+그 이후 소수점을 포함한 평균값을 구하기 위해 Double 형태로 변형해준 뒤 모든 합인 sum과 numbers의 포함된 값의 수를 구하는 count 를 사용하여 해당 숫자로 모든 합인 sum을 나눠주면 평균 값을 구할 수 있다.
+
+For 문의 기본 문법과 문장으로 이뤄진 문제를 swift 언어로 바꾸는 연습을 꾸준히 하자!
+
+guard 문
+guard 문은 함수 내 true / false 를 판단하여 각각의 코드를 실행할 수 있도록 설정해두는 문이다.
+
+func validate(id: String) {
+	guard id.count >= 6 else { 
+    	print(" 아이디는 6글자 이상으로 구성되어야 합니다 ")
+		return 
+	}	
+
+	print(“OK”)
+}
+guard 문의 특징은 입력된 값이 특정 조건을 만족하지 않으면 더이상 함수가 진행되지 않고 종료
+
+switch 문
+제어문으로써 다양한 형태의 매칭을 간결하게 처리할 수 있다.
+
+let number = 5
+
+switch number {
+case 0:
+	print("영")
+case 1, 2:
+	print("하나 또는 둘")
+case 3 ..< 10:
+	print("셋부터 아홉 사이")
+case 10:
+	print("열")
+default:
+	print("기타")
+이렇게 switch 문을 사용하면, 값이 변할때 마다 그 값에 맞는 메시지를 출력할 수 있다.

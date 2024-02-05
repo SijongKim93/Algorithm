@@ -363,3 +363,26 @@ arguments 는 함수에 전달하는 값을 의미한다.
 
 함수는 아직 이해가 쉽지 않은 부분이 존재하는 것 같다.
 앞으로 조금 더 능숙해지면서 점차적으로 이해할 수 있도록 준비해야할 것 같다.
+
+> 모델링
+import UIKit
+
+struct Course {
+    let title: String // 상수 저장 속성 , property
+    let subtitle: String
+    
+    let cardImageUrlStr: String
+//    let cardImageUrl: URL
+//    계산 속상. Computed Property
+    var cardImageUrl: URL? {
+        get {
+            return URL(string: cardImageUrlStr)
+        }
+        set {
+            
+        }
+    }
+    
+    let thumbnailImageUrlStr: String?
+    
+}

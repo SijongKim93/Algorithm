@@ -18,7 +18,7 @@ func solution(_ angle:Int) -> Int {
     } else if angle == 180 {
         return(4)
     }
-    return angle
-}
+  
+
 
 

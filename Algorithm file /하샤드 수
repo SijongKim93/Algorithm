@@ -1,0 +1,29 @@
+>문제 설명
+양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나누어져야 합니다. 예를 들어 18의 자릿수 합은 1+8=9이고, 18은 9로 나누어 떨어지므로 18은 하샤드 수입니다. 자연수 x를 입력받아 x가 하샤드 수인지 아닌지 검사하는 함수, solution을 완성해주세요.
+
+```
+func solution(_ x:Int) -> Bool {
+    let digits = String(x)
+    var sum = 0
+    for i in digits {
+        if let digit = Int(String(i)) {
+            sum += digit
+        }
+    
+    }
+    
+    if x % sum == 0 {
+        return true
+    }
+    return false
+}
+```
+
+먼저 정수를 쪼개 합을 구하기 위해 digits 라는 상수를 선언하여 정수 x 를 String으로 변환한다.
+그 이후 쪼갠 정수의 합을 구해둘 sum 변수를 선언한다.
+
+for 문을 이용하여 digits 의 쪼개진 인자들을 i 로 접근하는 식을 만들어준다.
+for 문 내 i 를 다시 인트로 바꿔 받아줄 digit 상수를 선언 한다 
+String 타입의 i 는 digit의 합을 담게 되고 다시 Int 로 바꿔준 후 sum 에 담아준다.
+sum의 나눈 값의 나머지가 0일 경우 하샤드 수이므로 true를 출력하도록 하고
+그 외 false가 출력되도록 설정하면 해당 알고리즘이 해결된다.

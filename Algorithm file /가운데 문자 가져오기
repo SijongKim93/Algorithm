@@ -1,0 +1,25 @@
+### **문제 설명**
+
+단어 s의 가운데 글자를 반환하는 함수, solution을 만들어 보세요. 단어의 길이가 짝수라면 가운데 두글자를 반환하면 됩니다.
+
+```swift
+func solution(_ s:String) -> String {
+    let middleIndex = s.index(s.startIndex, offsetBy: s.count / 2)
+    
+    if s.count % 2 == 0 {
+        let startIndex = s.index(middleIndex, offsetBy: -1)
+        let endIndex = s.index(middleIndex, offsetBy: 0)
+        return String(s[startIndex...endIndex])
+    } else {
+        return String(s[middleIndex])
+    }
+}
+```
+
+middleIndex 내 string 문자열의 가운데 인덱스를 구해주고
+
+이 인덱스를 if 문을 통해 짝수일 경우와 홀수일 경우를 구분하여 식을 짜준다.
+
+짝수의 경우 가운데 두글자를 가져와야 하므로 새로운 변수를 넣어 startIndex , endIndex 를 구하면 원하는 답이 나오고
+
+홀수의 경우 middleIndex 값을 그대로 넣어주면 완성된다.

@@ -1,0 +1,28 @@
+### **문제 설명**
+
+문자열 s의 길이가 4 혹은 6이고, 숫자로만 구성돼있는지 확인해주는 함수, solution을 완성하세요. 예를 들어 s가 "a234"이면 False를 리턴하고 "1234"라면 True를 리턴하면 됩니다.
+
+```swift
+func solution(_ s:String) -> Bool {
+    guard s.count == 4 || s.count == 6 else { return false }
+    
+    for char in s {
+        if !char.isNumber {
+            return false
+        }
+    }
+    return true
+}
+```
+
+먼저 문자의 길이가 4 혹은 6인 경우의 수를 guard 문을 통해 조건을 만들어 준다
+
+```swift
+guard s.count == 4 || s.count == 6 else { return false }
+```
+
+문자의 길이 수가 4 혹은 6이 되지 않는다면 false 를 리턴하게 된다.
+
+그 이후 s 를 for 문에 태워 숫자로만 이루어져 있는지  문자열이 섞여있는지 판별하기 위해
+
+!char.isNumber 를 사용하여 숫자가 아닌 경우 바로 false 로 리턴하고 그외 true 로 리턴하면 문제는 해결된다.

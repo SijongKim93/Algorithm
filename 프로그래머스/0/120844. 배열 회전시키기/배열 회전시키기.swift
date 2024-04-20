@@ -1,19 +1,14 @@
 import Foundation
 
 func solution(_ numbers:[Int], _ direction:String) -> [Int] {
-    var result: [Int] = []
+    var result: [Int] = numbers
     
     if direction == "right" {
-        let last = numbers.last!
-        result.append(last)
-        
-        for i in 0..<(numbers.count - 1) {
-            result.append(numbers[i])
-        }
+        let num = result.removeLast()
+        result = [num] + result
     } else {
-        let first = numbers.first!
-        result.append(contentsOf: numbers.dropFirst())
-        result.append(first)
+        let num2 = result.removeFirst()
+        result = result + [num2]
     }
     return result
 }

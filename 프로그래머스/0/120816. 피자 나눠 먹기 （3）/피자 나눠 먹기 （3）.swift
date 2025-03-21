@@ -1,9 +1,12 @@
 import Foundation
 
 func solution(_ slice:Int, _ n:Int) -> Int {
-    if n % slice == 0 {
-        return n / slice
+    var result: Int = 0
+    
+    if n % slice != 0 {
+        result = n / slice + 1
     } else {
-        return n / slice + 1
+        result = n / slice
     }
+    return result
 }

@@ -8,5 +8,6 @@ func solution(_ n:Int) -> Int {
             result += 1
         }
     }
+    
     return result
 }

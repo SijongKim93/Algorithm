@@ -1,7 +1,8 @@
 import Foundation
 
 func solution(_ numbers:[Int]) -> Int {
-    let number = numbers.sorted(by: > )
-    
-    return number[0] * number[1]
+    var sorted = numbers.sorted(by: >)
+    var maxResult = sorted[0] * sorted[1]
+
+    return maxResult
 }

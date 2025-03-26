@@ -1,5 +1,11 @@
 import Foundation
 
 func solution(_ strlist:[String]) -> [Int] {
-    return strlist.map( {$0.count} )
+    var result: [Int] = []
+    
+    for str in strlist {
+        result.append(str.count)
+    }
+    
+    return result
 }

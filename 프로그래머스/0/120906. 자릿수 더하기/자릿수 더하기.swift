@@ -1,13 +1,12 @@
 import Foundation
 
 func solution(_ n:Int) -> Int {
-    let str = String(n)
-    var sum = 0
+    var strN = String(n)
+    var result = 0
     
-    for i in str {
-        if let digit = Int(String(i)) {
-            sum += digit
-        }
+    for i in strN {
+        result += Int(String(i))!
     }
-    return sum
+    
+    return result
 }

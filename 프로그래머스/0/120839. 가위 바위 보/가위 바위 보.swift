@@ -1,15 +1,19 @@
 import Foundation
 
 func solution(_ rsp:String) -> String {
-    var result:String = ""
+    var r = "2"
+    var s = "0"
+    var p = "5"
     
-    for i in rsp {
-        if i == "2" {
-            result.append("0")
-        } else if i == "0" {
-            result.append("5")
-        } else if i == "5" {
-            result.append("2")
+    var result: String = ""
+    
+    for str in rsp {
+        if str == r.first! {
+            result.append(String(s.first!))
+        } else if str == s.first! {
+            result.append(String(p.first!))
+        } else {
+            result.append(String(r.first!))
         }
     }
     

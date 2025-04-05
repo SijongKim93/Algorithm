@@ -1,10 +1,12 @@
 import Foundation
 
 func solution(_ numbers:[Int]) -> Int {
-    let sorted = numbers.sorted(by: > )
+    var resultMax:[Int] = []
     
-    let maxNum = sorted[0] * sorted[1]
-    let minNum = sorted[sorted.count - 1] * sorted[sorted.count - 2]
-    
-    return max(maxNum, minNum)
+    for i in 0..<numbers.count {
+        for j in i+1..<numbers.count {
+            resultMax.append(numbers[i] * numbers[j])
+        }
+    }
+    return resultMax.max() ?? 0
 }

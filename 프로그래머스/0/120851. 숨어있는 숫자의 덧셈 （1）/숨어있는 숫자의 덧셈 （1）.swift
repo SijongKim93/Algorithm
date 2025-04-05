@@ -1,12 +1,14 @@
 import Foundation
 
 func solution(_ my_string:String) -> Int {
-    var sumNumber = 0
+    var result = 0
     
-    for i in my_string {
-        if let num = Int(String(i)) {
-            sumNumber += num
+    for i in 0...9 {
+        for str in my_string {
+            if String(str) == String(i) {
+                result += i
+            }
         }
     }
-    return sumNumber
+    return result
 }

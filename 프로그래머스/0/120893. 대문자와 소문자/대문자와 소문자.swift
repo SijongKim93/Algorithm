@@ -1,15 +1,15 @@
 import Foundation
 
 func solution(_ my_string:String) -> String {
-    var reuslt = ""
+    var result: String = ""
     
     for i in my_string {
-        if i.isLowercase {
-            reuslt.append(i.uppercased())
+        if i.isUppercase {
+            result.append(String(i).lowercased())
         } else {
-            reuslt.append(i.lowercased())
+            result.append(String(i).uppercased())
         }
     }
     
-    return reuslt
+    return result
 }

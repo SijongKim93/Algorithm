@@ -1,11 +1,11 @@
 import Foundation
 
 func solution(_ my_string:String, _ num1:Int, _ num2:Int) -> String {
-    var array = Array(my_string)
+    var strArray = my_string.map { String($0) }
     
-    array.swapAt(num1, num2)
+    strArray.swapAt(num1, num2)
     
-    var result = String(array)
+    let result = strArray.joined()
     
     return result
 }

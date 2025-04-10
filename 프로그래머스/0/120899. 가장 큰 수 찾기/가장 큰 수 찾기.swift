@@ -1,10 +1,9 @@
 import Foundation
 
 func solution(_ array:[Int]) -> [Int] {
+    guard let maxValue = array.max(), let arrayIndex = array.firstIndex(of: maxValue) else {
+        return []
+    }
     
-    var maxNumber = array.max()
-    var maxIndex = array.firstIndex(of: maxNumber!)
-    
-    
-    return [maxNumber!, maxIndex!]
+    return [maxValue, arrayIndex]
 }

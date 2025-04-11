@@ -1,14 +1,11 @@
 import Foundation
 
 func solution(_ n:Int) -> Int {
-    let pizza = 6
-    let people = n
-    var result:[Int] = []
+    var result = 1
     
-    for i in 1...100 {
-        if (pizza * i) % people == 0 {
-            result.append(i)
-        }
+    while (result * 6) % n != 0 {
+        result += 1
     }
-    return result[0]
+    
+    return result
 }

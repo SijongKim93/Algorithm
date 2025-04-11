@@ -1,8 +1,8 @@
 import Foundation
 
 func solution(_ my_string:String) -> String {
-    let lowString = my_string.lowercased()
-    let sorted = lowString.sorted(by: < )
+    var lowCaseString = my_string.lowercased()
+    var result = lowCaseString.sorted()
     
-    return String(sorted)
+    return String(result)
 }

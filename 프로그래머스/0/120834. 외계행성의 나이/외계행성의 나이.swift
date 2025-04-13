@@ -1,15 +1,7 @@
 import Foundation
 
 func solution(_ age:Int) -> String {
-    var array = Array("abcdefghij")
-    var strAge = String(age)
-    var result = ""
+    let listArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
     
-    for char in strAge {
-        if let digit = char.wholeNumberValue {
-            result.append(array[digit])
-        }
-    }
-    
-    return result
+    return String(age).map { listArray[Int(String($0))!] }.joined()
 }

@@ -4,11 +4,16 @@ func solution(_ numbers:[Int], _ direction:String) -> [Int] {
     var result: [Int] = numbers
     
     if direction == "right" {
-        let num = result.removeLast()
-        result = [num] + result
+        if let rightResult = result.last {
+            result.removeLast()
+            result.insert(rightResult, at: 0)
+        }
     } else {
-        let num2 = result.removeFirst()
-        result = result + [num2]
+        if let leftResult = result.first {
+            result.removeFirst()
+            result.append(leftResult)
+        }
     }
+    
     return result
 }

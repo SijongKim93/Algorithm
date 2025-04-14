@@ -1,16 +1,18 @@
 import Foundation
 
 func solution(_ order:Int) -> Int {
-    var clapCount = 0
+    var strOrder = String(order)
+    var result = 0
     
-    var number = order
-    while number > 0 {
-        let digit = number % 10
-        if digit == 3 || digit == 6 || digit == 9 {
-            clapCount += 1
+    for char in strOrder {
+        if String(char) == "3" {
+            result += 1
+        } else if String(char) == "6" {
+            result += 1
+        } else if String(char) == "9" {
+            result += 1
         }
-        number /= 10
     }
     
-    return clapCount
+    return result
 }

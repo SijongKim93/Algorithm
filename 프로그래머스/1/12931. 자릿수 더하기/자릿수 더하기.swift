@@ -1,10 +1,13 @@
 import Foundation
 
 func solution(_ n:Int) -> Int {
-    var result = 0
+    var num = n
+    var sum = 0
     
-    for i in String(n) {
-        result += Int(String(i))!
+    while num > 0 {
+        sum += num % 10
+        num /= 10
     }
-    return result
+    
+    return sum
 }
